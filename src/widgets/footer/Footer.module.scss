@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 29px 33px;
+  font: $main_font;
+  background-color: $light_primary_color;
+  border-radius: 30px 30px 0 0;
+  box-shadow: $box_shadow;
+
+  .logo {
+    font: $logo-font;
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .addition {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    .socialsItem {
+      list-style: none;
+
+      .icon {}
+    }
+  }
+}

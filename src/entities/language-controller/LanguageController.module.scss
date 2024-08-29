@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  gap: 17px;
+
+  input[type=radio] {
+    display: none;
+
+    &:checked~.languageLabel {
+      font-weight: 700;
+      color: $dark_accent_color;
+    }
+  }
+
+  .languageLabel {
+    font: $medium_font;
+  }
+}

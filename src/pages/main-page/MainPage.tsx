@@ -1,6 +1,8 @@
+import Catalog from '../../widgets/catalog/Catalog';
+
 const MainPage = () => {
   return (
-    <div>main page</div>
+    <Catalog />
   );
 }
 

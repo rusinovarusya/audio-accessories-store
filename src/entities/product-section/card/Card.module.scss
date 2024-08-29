@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 360px;
+  padding: 15px 20px 26px;
+  background-color: $light_primary_color;
+  border-radius: 30px;
+  box-shadow: $box_shadow;
+
+  .img {
+    align-self: center;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 68px;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      font: $main_font;
+
+      .name {}
+
+      .price {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .newPrice {
+          color: $dark_accent_color;
+        }
+
+        .oldPrice {
+          font: $small_font;
+          color: $light_accent_color;
+          text-decoration: line-through;
+        }
+      }
+
+      .rating {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $middle_color;
+
+        .icon {
+          fill: $light_accent_color;
+        }
+      }
+
+      .buyButton {
+        font: $main_font;
+        background-color: inherit;
+      }
+    }
+  }
+}
