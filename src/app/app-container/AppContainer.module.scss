@@ -1,0 +1,13 @@
+.container {
+  background-color: $bc_color;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    width: 1110px;
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+}
