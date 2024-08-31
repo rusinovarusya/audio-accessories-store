@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+
+  .button {
+    width: 30px;
+    height: 30px;
+    background-color: $light_accent_color;
+    border-radius: 50%;
+  }
+
+  .input::-webkit-outer-spin-button,
+  .input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .input {
+    width: 30px;
+    font: $main_font;
+    color: $dark_primary_color;
+    text-align: center; 
+  }
+}

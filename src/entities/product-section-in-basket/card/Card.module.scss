@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  gap: 24px;
+  padding: 18px 28.13px 15px 18.76px;
+  background-color: $light_primary_color;
+  border-radius: 30px;
+  box-shadow: $box_shadow;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 19px;
+  }
+
+  .mainInformation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 58px;
+    margin-bottom: 76px;
+
+    .name {
+      font: $main_font;
+      color: $dark_primary_color;
+    }
+  
+    .price {
+      font: $medium_font;
+      color: $middle_color;
+    }
+  }
+
+  .control {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+
+    .deleteButton {
+      background-color: inherit;
+    }
+  
+    .price {
+      margin-bottom: 6px;
+      font: $main_font;
+      color: $dark_primary_color;
+    }
+  }
+}

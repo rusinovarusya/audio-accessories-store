@@ -1,4 +1,4 @@
-import ProductSection from '../../entities/product-section/ProductSection';
+import ProductSection from '../../entities/product-section-in-catalog/ProductSectionInCatalog';
 import styles from './Catalog.module.scss';
 
 const Catalog = () => {

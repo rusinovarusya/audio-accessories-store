@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 312px;
+  background-color: $light_primary_color;
+  border-radius: 30px;
+  box-shadow: $box_shadow;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 18px 15px;
+    font: $medium_font;
+    font-weight: 600;
+    color: $dark_primary_color;
+
+    .costLabel {
+      text-transform: uppercase;
+    }
+
+    .cost {}
+  }
+
+  .submitButton {
+    padding: 22px;
+    font: $main_font;
+    color: $light_primary_color;
+    background-color: $dark_primary_color;
+    border-radius: 20px;
+    box-shadow: $box_shadow;
+  }
+}

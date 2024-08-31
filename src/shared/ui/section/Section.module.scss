@@ -7,10 +7,4 @@
     font: $title_font;
     color: $middle_color;
   }
-
-  .content {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 30px;
-  }
 }
