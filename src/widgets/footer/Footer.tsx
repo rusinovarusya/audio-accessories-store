@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import LanguageController from '../../entities/language-controller/LanguageController';
 import Icon from '../../shared/ui/icon/Icon';
 import styles from './Footer.module.scss';
@@ -5,10 +6,16 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.container}>
-      <h2 className={styles.logo}>QPICK</h2>
+      <Link to={'/'} className={styles.link}>
+        <h2 className={styles.logo}>QPICK</h2>
+      </Link>
       <nav className={styles.pagination}>
-        <span className={styles.favorites}>Избранное</span>
-        <span className={styles.basket}>Корзина</span>
+        <Link to={'/wish-list'} className={styles.link}>
+          <span className={styles.favorites}>Избранное</span>
+        </Link>
+        <Link to={'/basket'} className={styles.link}>
+          <span className={styles.basket}>Корзина</span>
+        </Link>
         <span className={styles.contacts}>Контакты</span>
       </nav>
       <div className={styles.addition}>

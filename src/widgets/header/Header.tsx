@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import Icon from '../../shared/ui/icon/Icon';
 import styles from './Header.module.scss';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
 
 const Header = () => {
   const favoritesCount = 0;
-  const basketCount = 0;
+  const basketCount = useSelector((state: RootState) => state.basket.list).reduce((total, product) => total + product.count, 0) || 0;
 
   return (
     <header className={styles.container}>

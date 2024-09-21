@@ -2,14 +2,23 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 310px;
   height: 360px;
   padding: 15px 20px 26px;
   background-color: $light_primary_color;
   border-radius: 30px;
   box-shadow: $box_shadow;
 
-  .img {
-    align-self: center;
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 270px;
+
+    .img {
+      max-width: 100%;
+    }
   }
 
   .description {
@@ -56,6 +65,7 @@
       .buyButton {
         font: $main_font;
         background-color: inherit;
+        cursor: pointer;
       }
     }
   }

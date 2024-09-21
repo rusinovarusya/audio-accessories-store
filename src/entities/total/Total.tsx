@@ -1,7 +1,19 @@
+import { useSelector } from 'react-redux';
 import styles from './Total.module.scss';
+import { RootState } from '../../app/store';
+import { headphones, wirelessHeadphones } from '../../app/db/db';
 
 const Total = () => {
-  const cost = 0;
+  const productInBasketList = useSelector((state: RootState) => state.basket.list);
+  const productInBasketWithCostList = productInBasketList.map((product) => {
+    const productWithCost = headphones.find((headphone) => (
+      headphone.productId === product.productId
+    )) || wirelessHeadphones.find((wirelessHeadphone) => (
+      wirelessHeadphone.productId === product.productId
+    ));
+    return { ...product, price: productWithCost?.price.newPrice || 0 };
+  })
+  const cost = productInBasketWithCostList.reduce((total, product) => total + product.price * product.count, 0)|| 0;
 
   return (
     <div className={styles.container}>

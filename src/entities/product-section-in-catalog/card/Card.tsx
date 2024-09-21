@@ -1,24 +1,31 @@
-import { productData } from '../../../app/db/db-data';
+import { useDispatch } from 'react-redux';
+import { headphones, wirelessHeadphones } from '../../../app/db/db';
+import { getImageSource } from '../../../features/module/getImageSource';
 import { IProduct } from '../../../shared/types';
 import Icon from '../../../shared/ui/icon/Icon';
 import styles from './Card.module.scss';
+import { addProductToBasket } from '../../../features/slices/basketSlice';
 
 interface CardProps {
   productId: string;
 }
 
 const Card = ({ productId }: CardProps) => {
-  const productItem = productData.find((item) => item.productId === productId);
-  const { name, price: { oldPrice, newPrice }, rating } = productItem as IProduct;
+  const dispatch = useDispatch();
+
+  const productItem = headphones.find((item) => item.productId === productId) || wirelessHeadphones.find((item) => item.productId === productId);
+  const { name, img, price: { oldPrice, newPrice }, rating } = productItem as IProduct;
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const v = e.currentTarget.value;
-    alert(v)
+    const productId = e.currentTarget.value;
+    dispatch(addProductToBasket({ productId, count: 1 }));
   }
 
   return (
     <div className={styles.container}>
-      <img src='' alt='img' className={styles.img} />
+      <div className={styles.imgContainer}>
+        <img src={getImageSource(img || '')} alt='img' className={styles.img} />
+      </div>
       <div className={styles.description}>
         <div className={styles.row}>
           <div className={styles.name}>{name}</div>
@@ -38,7 +45,7 @@ const Card = ({ productId }: CardProps) => {
           <Icon name='star' width={24} height={22} />
           {rating}
         </div>
-          <button className={styles.buyButton} onClick={onClick}>Купить</button>
+          <button className={styles.buyButton} value={productId} onClick={onClick}>Купить</button>
         </div>
       </div>
     </div>
