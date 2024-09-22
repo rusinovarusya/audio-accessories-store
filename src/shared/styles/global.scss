@@ -8,3 +8,11 @@
   outline: none;
   text-decoration: none;
 }
+
+button:hover, a:hover {
+  color: $light_accent_color;
+}
+
+button:active, a:active {
+  color: $dark_accent_color;
+}

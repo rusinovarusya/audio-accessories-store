@@ -2,9 +2,8 @@
   background-color: $bc_color;
 
   .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
     gap: 20px;
     width: 1110px;
     min-height: 100vh;

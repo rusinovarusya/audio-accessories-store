@@ -24,7 +24,7 @@ const basketSlice = createSlice({
     },
     removeProductFromBasket: (state, action) => {
       const productId = action.payload.productId;
-      state.list.filter((item) => item.productId !== productId);
+      state.list = state.list.filter((item) => item.productId !== productId);
     },
     increaseProductCountInBasket: (state, action) => {
       const productId = action.payload.productId;

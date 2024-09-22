@@ -4,7 +4,8 @@ import styles from './ProductSectionInBasket.module.scss';
 import { RootState } from '../../app/store';
 
 const ProductSectionInBasket = () => { 
-  const productIdList = useSelector((state: RootState) => state.basket.list).map((product) => product.productId);
+  const productInBasketList = useSelector((state: RootState) => state.basket.list);
+  const productIdList: string[] = productInBasketList.map((product) => product.productId);
 
   return (
     <div className={styles.container}>

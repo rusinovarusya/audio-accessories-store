@@ -18,7 +18,8 @@ const Card = ({ productId }: Card) => {
   const productItem = headphones.find((item) => item.productId === productId) || wirelessHeadphones.find((item) => item.productId === productId);
   const { name, img, price: { newPrice } } = productItem as IProduct;
 
-  const count = useSelector((state: RootState) => state.basket.list).find((product) => product.productId === productId)?.count || 0;
+  const productInBasketList = useSelector((state: RootState) => state.basket.list);
+  const count = productInBasketList.find((product) => product.productId === productId)?.count || 0;
 
   const deleteProductFromBasket = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const productId = e.currentTarget.value;
